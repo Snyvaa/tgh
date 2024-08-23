@@ -152,5 +152,5 @@ while game:
         else:
             clear_output()
             print('HUH?')
-            gambling_more = input("Do you want to continue Y-N: ")  # Ask for input again
+            gambling_more = input("Do you want to continue Y-N: ")
             continue
