@@ -148,17 +148,6 @@ class LinkedList:
         return popped_node
     
 
-    def remove(self, index):
-        prev_node = self.get(index-1)
-        popped_node = prev_node.next
-        prev_node.next = popped_node.next
-        popped_node.next = None
-        self.length -= 1
-        return popped_node
-
-
-
-
 linked_list = LinkedList()
 print(linked_list)
 linked_list.append(10)
