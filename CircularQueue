@@ -1,0 +1,28 @@
+def enqueue(self, n):
+    if self.isfull():
+        return "Queue is full"
+    elif self.tail + 1 == self.maxstacks:
+        self.tail = 0
+    elif self.head == -1:
+        self.head = 0
+    else:
+        self.tail += 1
+    self.Queue[self.tail] = n
+    return "Enqueued successfully"
+def dequeue(self):
+    if self.isEmpty():
+        return "The queue is empty"
+    elif self.head == self.tail:
+        self.queue[self.tail] = None
+        self.head = -1
+        self.tail = -1
+        return "The queue is now empty"
+    self.queue[self.head] = None
+    if self.head + 1 == self.maxstacks:
+        self.head = 0
+    else:
+        self.head += 1
+def delete(self):
+    self.Queue = self.maxstacks * [None]
+    self.head = -1
+    self.tail = -1
