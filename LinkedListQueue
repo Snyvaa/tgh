@@ -1,0 +1,55 @@
+class Node:
+    def __init__(self, value=None):
+        self.value = value
+        self.next = None
+    
+    def __str__(self):
+        return str(self.value)
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+    
+    def __iter__(self):
+        curNode = self.head
+        while curNode:
+            yield curNode
+            curNode = curNode.next
+
+class Queue:
+    def __init__(self):
+        self.linkedList = LinkedList()
+    
+    def __str__(self):
+        values = [str(x) for x in self.linkedList]
+        return ' '.join(values)
+    
+    def enqueue(self,n):
+        n = Node(n)
+        if self.linkedList.head == None:
+            self.linkedList.head = n
+            self.linkedList.tail = n
+        else:
+            self.linkedList.tail.next = n
+            self.linkedList.tail = n
+    def isempty(self):
+        return self.linkedList.head is None
+    def dequeue(self):
+        if self.isempty():
+            return
+        self.linkedList.head = self.linkedList.head.next
+    def peek(self):
+        return self.linkedList.head.value
+    def delete(self):
+        self.linkedList.head = None
+        self.linkedList.tail = None
+
+customqueue = Queue()
+customqueue.enqueue(3)
+customqueue.enqueue(5)
+customqueue.enqueue(2)
+customqueue.enqueue(8)
+customqueue.dequeue()
+customqueue.peek()
+print(customqueue)
